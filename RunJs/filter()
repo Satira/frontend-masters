@@ -1,0 +1,46 @@
+// .filter() is a method that creates a new array with all elements that pass the test implemented by the callback
+
+// Lets recreate .filter() in Underscore way
+const _ = {};
+
+_.filter = function(arr, cb) {
+//   create a new array
+  const storage = [];
+//   loop thorugh arr
+  for (let i = 0; i < arr.length; i++) {
+//     check if cb return true
+    if(cb(arr[i], i, arr) === true) {
+//       if returns true, push into array
+      storage.push(arr[i]);
+    }
+  }
+//   return arr
+  return storage;
+}
+
+// lets recreate it using _.each()
+
+_.filter = function(arr, cb) {
+//   create a new array
+  const storage = [];
+//   loop thorugh arr
+  _.each(arr, function(item, i, list) {
+      if(cb(item, i, list) === true) {
+//       if returns true, push into array
+         storage.push(item);
+    }
+  })
+//   return arr
+  return storage;
+}
+
+
+// Lets see how to use it.Lets pretend we have an array of objects called videoData. Each object has three properties - name: present: rooms:. "Present" can be true or false. We need to loop through the object and return those objects that has "present" properties  - true.
+
+._filter(videoData, function(suspectObject) {
+  return suspectObject.present
+});
+
+// the code above will return all array objects that have their present properties evaluates true
+
+

@@ -1,0 +1,22 @@
+let obj = {
+  first: "Joe",
+  last: "Bidden"
+}
+
+let first = obj.first;
+let last = obj.last;
+
+
+// We can do this way using ES Destructuring. Relly on order. "a" will be assigned to the first property of the array. 
+
+let [a, b] = [obj.first, obj.last];
+
+// Destructuring Objects - does not relly on order. You can assign variables according to the respective property name.
+
+const {prop1 , prop2} = {prop1: 0, prop2: 1};
+
+const {prop3 , prop0} = {prop0: 0, prop3: 1};
+
+
+
+

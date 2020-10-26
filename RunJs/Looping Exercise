@@ -1,0 +1,74 @@
+const game = {
+  suspects: [
+    {
+      name: "Rusty",
+      color: "orange"
+    },
+    {
+      name: "Miss Scarlet",
+      color: "red"
+    }
+  ]
+}
+
+// Looping via For loop and 
+function forLoop() {
+  for( let i = 0; i < game.length; i++) {
+    console.log(game[i]);
+  }
+}
+forLoop();
+// That is not going to work as this is an Oblect and Objects does not have "lenght"
+
+function forLoop2() {
+  for( let i = 0; i < game.suspects.length; i++) {
+    console.log(game.suspects[i]);
+  }
+}
+forLoop2();
+// This is how it's gonna work!!!
+
+// Now, loop through all the properties and array of objects
+var gameLoop = function() {
+  for( let i = 0; i < game.suspects.length; i++) {
+    console.log('outer loop');
+    for(let key in game.suspects[i]) {
+          console.log('inner loop');
+      if(game.suspects[i][key] === "Rusty") {
+        console.log('Found \'em !');
+      } else {
+        console.log('next time pall!');
+      }
+    }
+  }
+}
+gameLoop();
+
+// Now Destructure the nested "color" data structure into two variables 
+
+const suspects = [
+    {
+      name: "Rusty",
+      color: "orange"
+    },
+    {
+      name: "Miss Scarlet",
+      color: "red"
+    }
+]
+
+var [color1, color2] = [suspects[0].color, suspects[1].color, ];
+
+color1
+color2
+
+// or
+
+var [{color: color3}, {color: color4}] = suspects;
+color3;
+color4;
+
+// or to assign all properties
+var [obj1,obj2] = suspects;
+obj1
+obj2
