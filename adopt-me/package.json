@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "format": "prettier \"src/**/*.{js, html}\" --write",
-    "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint --ext .jsx,.js src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.12.0",
     "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-header": "^3.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
