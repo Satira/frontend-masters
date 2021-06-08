@@ -20,6 +20,8 @@
 *.tar
 *.zip
 node_modules/
+.cache
+dist
 
 # Logs and databases #
 ######################
